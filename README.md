@@ -1,4 +1,4 @@
-This is the code repository for the ICRA'24 paper "Night-Rider: Nocturnal Vision-aided Localization in Streetlight Maps Using Invariant Extended Kalman Filtering"
+This is the code repository for the ICRA'24 paper "**Night-Rider: Nocturnal Vision-aided Localization in Streetlight Maps Using Invariant Extended Kalman Filtering**"
 
 [![Night-Rider: Nocturnal Vision-aided Localization in Streetlight Maps Using Invariant Extended Kalman Filtering](cover.png)](http://www.youtube.com/watch?v=Hs067MNuoQE "Night-Rider: Nocturnal Vision-aided Localization in Streetlight Maps Using Invariant Extended Kalman Filtering")
 
@@ -12,9 +12,10 @@ The repository has been tested in Ubuntu 18.04 with ROS Melodic. To setup Night-
 - [sophus](https://github.com/strasdat/Sophus)
 
 2. Streetlight Map
+
 The streetlight map is stored in /pcd folder. We use [FAST_LIO_LC](https://github.com/yanliang-wang/FAST_LIO_LC) and detected streetlights to filter streetlight points. The cloudcompare tool and DBSCAN algorithm enable us to further refine the streetlight map.
 
-3. Quick Start
+4. Quick Start
 ```bash
 mkdir -p ws_night_rider/src
 cd ws_night_rider/src
