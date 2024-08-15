@@ -9,7 +9,8 @@ The repository has been tested in Ubuntu 18.04 with ROS Melodic. To setup Night-
 - [Opencv 4.2](https://github.com/opencv/opencv)
 - Eigen3
 - [PCL 1.8](https://github.com/PointCloudLibrary/pcl)
-- [sophus](https://github.com/strasdat/Sophus)
+- [Sophus](https://github.com/strasdat/Sophus)
+- [GeographicLib](https://github.com/geographiclib/geographiclib)
 
 2. Streetlight Map
 
