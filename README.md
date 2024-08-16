@@ -6,7 +6,7 @@ This is the code repository for the ICRA'24 paper "**Night-Rider: Nocturnal Visi
 The repository has been tested in Ubuntu 18.04 with ROS Melodic. To setup Night-Rider, install the dependencies with command lines below.
 1. Dependencies
 
-- [Opencv 4.2](https://github.com/opencv/opencv)
+- [Opencv 3.2](https://github.com/opencv/opencv)
 - Eigen3
 - [PCL 1.8](https://github.com/PointCloudLibrary/pcl)
 - [Sophus](https://github.com/strasdat/Sophus)
