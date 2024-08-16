@@ -1,0 +1,120 @@
+common:
+    img_topic: /camera/color/image_raw/compressed
+    box_topic: /yolov7_bbox
+    odom_topic: /odom
+    imu_topic: /livox/imu
+    gps_topic: /gnss
+    high_lamp: 1.0
+    z_th: 55
+    dist_th: 55
+    update_z_th: 75
+    update_dist_th: 100
+    reloc_z_th: 35
+    reloc_dist_th: 45
+    reloc_update_z_th: 75
+    reloc_update_dist_th: 75
+    alpha1: 0.5
+    alpha2: 0.5
+    beta2: 0.5
+    use_history_match: false
+    extend: 10
+    grey_th: 252
+    left_right_gap: 60
+    ablation_reloc: false
+    ablation_matext: false
+
+rematch:
+    delta_Rbb_th: 0.05
+    delta_tbb_th: 0.25
+    delta_Rbb_th2: 0.015
+    delta_tbb_th2: 0.04
+
+camera:
+    cam_fx: 910.777
+    cam_fy: 910.656
+    cam_cx: 639.846
+    cam_cy: 355.401
+    dist_k1: 0.0
+    dist_k2: 0.0
+    dist_k3: 0.0
+    dist_p1: 0.0
+    dist_p2: 0.0                 # only support pinhole camera model
+    res_x: 1280
+    res_y: 720
+
+odometer:
+    # mdt_cov_noise_fixed: false
+    # mSigma: 0.005 #0.001
+    # mSigmam: 0.005 #0.001
+    # mvscale: 1.0
+    # mrc: 1.0
+    # mFreqRef: 100.0
+    # pco: [0.0, 0.00, 0.00]
+    # Rco: [0, -1,  0,
+    #       0,  0,  -1,
+    #       1,  0,  0]
+    cov_vel: [0.001, 0.001, 0.001]
+
+optimization:
+    num_iteration_iekf: 20
+
+fusion_way:
+    inekf: true
+
+imu:
+    normalized: true
+    gyroscope_std: [1.6912455461587871e-03, 1.2118225332973804e-03, 1.6146741327812619e-03]
+    accelerometer_std: [7.2510837330793689e-04, 8.8071690484254771e-04, 1.3471694990898537e-03]
+    accelerometer_bias_std: [3.0608877651619066e-05, 2.0168661087254066e-05, 3.7608575535597191e-05]
+    gyroscope_bias_std: [8.1307125981080534e-05, 4.7064776326160538e-05, 9.4599609702988706e-05]
+    Rci: [-0.134582,  -0.990831,   -0.0119257,
+          -0.0427573,  0.0178307,  -0.998926,
+           0.98998,    -0.133927,  -0.0447649]
+    pci: [0.008065706, -0.013901938, -0.044590552]
+    Roi: [0.98998,  -0.133927,   -0.0447649,
+          0.134582,  0.990831,    0.0119257,
+          0.0427573,-0.0178307,   0.998926]
+    Rco: [0, -1,  0,
+          0,  0,  -1,
+          1,  0,  0]
+    pco: [0.00, 0.00, 0.00]
+    # Roi: [0.953057, 0.30279, 0,
+    #       -0.30279, 0.953057,0,
+    #       0,        0,       1]
+    # poi: [-0.03265192865, -0.03477930932, 0.0284]
+    # Rco: [0.171749401316, -0.985068504147, -0.0119257,
+    #       -0.0461491017191, 0.0040471905829, -0.998926,
+    #       0.98405912519, 0.172115979361, -0.0447649]
+    # pco: [0.0320964, -0.0579195, -0.0543362]
+
+gps:
+    use_gps: false
+    use_elevation: false
+    gps_cov_threshold: 1.5
+    gps_init_x: 22.126760
+    gps_init_y: 113.546800
+    gps_init_z: 4.799900
+    init_alpha: -10000
+    init_beta: -10000
+    init_gamma: -10000
+    yaw_offset: -1.1406
+    
+
+initialization:
+    need_init: true
+    init_x: 0
+    init_y: 0
+    init_z: 0
+    init_alpha: 0
+    init_beta: 0.0
+    init_gamma: 0.0
+    init_extend: false
+    search_dist_scope: 55
+    search_z_scope: 45
+    num_particles: 40000
+
+load:
+    # pointcloud_path: /home/gtx/ws_map_relocalization/src/map_relocalization/pcd/lamps_size_intensity_distribution_reprojection_distance_outlierremove_cluster0320_2_1.txt
+    # cluster_num: 59
+    pointcloud_path: /home/gtx/ws_map_relocalization/src/map_relocalization/pcd/seaside1/0830/lamps.txt
+    cluster_num: 120
